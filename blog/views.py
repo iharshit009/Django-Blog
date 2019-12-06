@@ -30,7 +30,7 @@ def home(request):
     context = {
         'posts': posts
     }
-    return render(request, 'blog/home.html')
+    return render(request, 'blog/home.html', context)
 
 
 def about(request):
