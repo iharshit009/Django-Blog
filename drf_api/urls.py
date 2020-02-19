@@ -24,5 +24,7 @@ urlpatterns = [
     path('api/token/', obtain_auth_token, name = 'obtain-token'),
     path('create/', PostCreateView.as_view(), name = 'create'),
     path('list-create/', PostListCreateView.as_view(), name = 'list-create' ),
-    path('rest-auth/', include('rest_auth.urls'))
+    path('rest-auth/', include('rest_auth.urls')),
+    path('apis/v1/', include('apis.urls')),
+
 ]

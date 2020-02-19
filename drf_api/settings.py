@@ -40,7 +40,9 @@ INSTALLED_APPS = [
      'rest_framework',
      'rest_framework.authtoken',
      'rest_auth',
-     'core'
+     'todos.apps.TodosConfig',
+     'core',
+     'apis.apps.ApisConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +127,11 @@ STATIC_URL = '/static/'
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication'
-    ]
+
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication',),
+        # 'rest_framework.authentication.TokenAuthentication',
+                # 'rest_framework.permissions.AllowAny'
+
+    
 }
